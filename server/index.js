@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const config = require('./config');
 
-require('./models').connect(config.dbUri);
+require('./models').connect(process.env.MONGODB_URI || config.dbUri);
 
 const app = express();
 app.use(bodyParser.json());
