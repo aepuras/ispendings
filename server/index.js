@@ -1,12 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const path = require('path');
 const config = require('./config');
 
 require('./models').connect(process.env.MONGODB_URI || config.dbUri);
 
 const app = express();
 app.use(bodyParser.json());
+
+const staticFiles = express.static(path.join(__dirname, '../../client/build'))
+app.use(staticFiles)
+
 app.use(passport.initialize());
 
 // load passport strategies
@@ -25,6 +30,13 @@ const apiRoutes = require('./routes/api');
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
 
-app.listen(3001, () => {
-  console.log('Server is running on http://localhost:3001 or http://127.0.0.1:3001');
+
+// any routes not picked up by the server api will be handled by the react router
+app.use('/*', staticFiles)
+
+app.set('port', (process.env.PORT || 3001))
+app.listen(app.get('port'), () => {
+  console.log(`Listening on ${app.get('port')}`)
 });
+
+
