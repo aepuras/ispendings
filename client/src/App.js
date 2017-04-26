@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
-import DashboardPage from './containers/DashboardPage';
+import StatsPage from './containers/StatsPage';
 import LoginPage from './containers/LoginPage';
 import RegisterPage from './containers/RegisterPage';
 import Auth from './modules/Auth';
@@ -15,7 +15,7 @@ class App extends Component {
         <Navigation />
         <div className="App-intro">
             <Route exact path="/" render={() => (
-                Auth.isUserAuthenticated() ? <DashboardPage /> : <Home />
+                Auth.isUserAuthenticated() ? <StatsPage /> : <Home />
             )}/>
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/register" component={RegisterPage} />

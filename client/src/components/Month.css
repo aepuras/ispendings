@@ -1,0 +1,28 @@
+.monthStat {
+    border: solid 1px #aaa;
+    padding: 4px;
+    margin: 2px;
+    cursor: pointer;
+    width: 200px;
+}
+
+.monthName {
+    font-weight: bold;
+}
+
+.monthStatSavings {
+    padding: 4px;
+    margin: 2px;
+    display: flex;
+    font-weight: bold;
+}
+
+.monthStatSavings div {
+    width: 50%;
+    text-align: middle;
+    margin-right: 10px;
+}
+
+.monthStatDetails {
+    margin-top: 35px;
+}

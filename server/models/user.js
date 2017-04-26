@@ -7,7 +7,15 @@ const UserSchema = new mongoose.Schema({
         index: { unique: true }
     },
     password: String,
-    message: String
+    categories: [{
+        name: String,
+        items: [String]
+    }],
+    expenses: [{
+        date: String,
+        name: String,
+        value: String
+    }]
 });
 
 UserSchema.methods.comparePassword = function comparePassword(password, callback) {
@@ -16,12 +24,9 @@ UserSchema.methods.comparePassword = function comparePassword(password, callback
 
 UserSchema.pre('save', function saveHook(next) {
     const user = this;
-
     if(!user.isModified('password')) { return next(); }
-
     return bcrypt.genSalt((saltError, salt) => {
         if (saltError) { return next(saltError); }
-
         return bcrypt.hash(user.password, salt, (hashError, hash) => {
             if (hashError) { return next(hashError); }
             user.password = hash;

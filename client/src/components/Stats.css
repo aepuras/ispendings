@@ -1,0 +1,16 @@
+.stat_thumbs {
+    display: block;
+    overflow: auto;
+    position: fixed;
+    width: 220px;
+    background-color: #FBFBFB;
+    padding: 10px;
+    height: 100%;
+    top: 35px;
+}
+
+.stat_details {
+    display: block;
+    margin-left: 240px;
+    padding: 10px;
+}

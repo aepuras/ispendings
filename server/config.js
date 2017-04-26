@@ -1,5 +1,5 @@
 const settings = {
-  "dbUri": "mongodb://localhost/react_auth",
+  "dbUri": "mongodb://localhost/xpenses",
   "jwtSecret": "a secret phrase!!"
 }
 

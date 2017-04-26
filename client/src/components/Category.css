@@ -1,0 +1,15 @@
+.monthStatCategory {
+    background-color: #eee;
+    padding: 4px;
+    margin: 2px;
+    display: flex;
+
+}
+
+.monthStatCategory div {
+    width: 50%;
+    text-align: middle;
+    margin-right: 10px;
+}
+
+
