@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-const config = require('./config');
+const config = require('./config.json');
 
 require('./models').connect(process.env.MONGODB_URI || config.dbUri);
 
