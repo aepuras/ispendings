@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import Home from './components/Home';
+import DashboardPage from './containers/DashboardPage';
+import LoginPage from './containers/LoginPage';
+import RegisterPage from './containers/RegisterPage';
+import Auth from './modules/Auth';
 import './App.css';
 
 class App extends Component {
-  state = {cities: []}
-
-  async componentDidMount() {
-    const response = await fetch('/cities')
-    const cities   = await response.json()
-
-    this.setState({cities: cities})
-  }
-
   render() {
     return (
-      <div>
-        <h2>{process.env.REACT_APP_MY_VARIABLE}</h2>
-        <ul>
-          {this.state.cities.map( city => {
-            return <li key={city.name}> <b>{city.name}</b>: {city.population}</li>
-          })}
-        </ul>
+      <div className="App">
+        <Navigation />
+        <div className="App-intro">
+            <Route exact path="/" render={() => (
+                Auth.isUserAuthenticated() ? <DashboardPage /> : <Home />
+            )}/>
+            <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/register" component={RegisterPage} />
+            <Route exact path="/logout" render={() => {
+                Auth.deauthenticateUser();
+                return(<Redirect to="/"/>);
+            }}/>
+        </div>
       </div>
     );
   }
