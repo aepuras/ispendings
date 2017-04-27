@@ -5,6 +5,7 @@ import Auth from '../modules/Auth';
 
 const Navigation = () => (
     <nav>
+        <div className="logo"></div>
         <div><Link to="/">Home</Link></div>
         {Auth.isUserAuthenticated() && <div><Link to="/logout">Logout</Link></div>}
         {!Auth.isUserAuthenticated() && <div><Link to="/login">Login</Link></div>}

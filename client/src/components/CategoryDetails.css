@@ -12,7 +12,7 @@
 
 .categoryDetailsItem div {
     flex: 1;
-    background-color: #eee;
+    background-color: #ece7c6;
     padding: 2px;
     font-size: 11px;
     margin-right: 2px;
@@ -22,7 +22,7 @@
     margin-top: 3px;
     display: flex;
     font-weight: bold;
-    color: #FF7F00;
+    color: #d26400;
 }
 
 .categoryDetailsTotal div:nth-child(1) {

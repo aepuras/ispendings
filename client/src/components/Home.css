@@ -1,0 +1,14 @@
+.homeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home {
+    border: 0px;
+    width: 350px;
+    height: 350px;
+    background-image: url(./piggybank.jpg);
+    position: relative;
+    top: 100px;
+}
