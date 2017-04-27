@@ -18,7 +18,7 @@ const LoginForm = ({
 
             <div className={classnames('field', {error: !!errors.password})}>
                 <input className="login-input-field" type="password" id="password" name="password" value={user.password} onChange={onChange} placeholder="Password" />
-                <span className="error-message">{errors.passworemaild}</span>
+                <span className="error-message">{errors.password}</span>
             </div>
 
             <input className="login-button" type="submit" value="Login" />
