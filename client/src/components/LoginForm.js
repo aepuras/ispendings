@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import './LoginForm.css';
 
 const LoginForm = ({
     onSubmit,
@@ -8,24 +9,21 @@ const LoginForm = ({
     errors,
     user,
 }) => (
-    <form action="/" onSubmit={onSubmit}>
-        <h2>Login</h2>
-        {errors.summary && <p className="error-message">{errors.summary}</p>}
+    <div className="loginForm">
+        <form action="/" onSubmit={onSubmit}>
+            <div className={classnames('field', {error: !!errors.email})}>
+                <input className="login-input-field" type="text" id="email" name="email" value={user.email} onChange={onChange} placeholder="E-mail"/>
+                <span className="error-message">{errors.email}</span>
+            </div>
 
-        <div className={classnames('field', {error: !!errors.email})}>
-            <label htmlFor="email">E-mail</label>
-            <input type="text" id="email" name="email" value={user.email} onChange={onChange} />
-            <span>{errors.email}</span>
-        </div>
+            <div className={classnames('field', {error: !!errors.password})}>
+                <input className="login-input-field" type="password" id="password" name="password" value={user.password} onChange={onChange} placeholder="Password" />
+                <span className="error-message">{errors.passworemaild}</span>
+            </div>
 
-        <div className={classnames('field', {error: !!errors.password})}>
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" name="password" value={user.password} onChange={onChange} />
-            <span>{errors.email}</span>
-        </div>
-
-        <input type="submit" value="Login" />
-    </form>
+            <input className="login-button" type="submit" value="Login" />
+        </form>
+    </div>
 );
 
 LoginForm.propTypes = {

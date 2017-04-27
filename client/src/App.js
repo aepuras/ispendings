@@ -5,6 +5,7 @@ import Home from './components/Home';
 import StatsPage from './containers/StatsPage';
 import LoginPage from './containers/LoginPage';
 import RegisterPage from './containers/RegisterPage';
+import SettingsPage from './containers/SettingsPage';
 import Auth from './modules/Auth';
 import './App.css';
 
@@ -19,6 +20,7 @@ class App extends Component {
             )}/>
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/register" component={RegisterPage} />
+            <Route exact path="/settings" component={SettingsPage} />
             <Route exact path="/logout" render={() => {
                 Auth.deauthenticateUser();
                 return(<Redirect to="/"/>);
