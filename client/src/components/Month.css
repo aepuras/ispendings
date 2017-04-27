@@ -1,15 +1,16 @@
 .monthStat {
-    border: solid 1px #aaa;
     padding: 4px;
-    margin: 2px;
+    margin: 2px 2px 20px 2px;
     cursor: pointer;
     width: 200px;
     font-size: 12px;
+    background-color: #b5d0b9;
 }
 
 .monthName {
     font-weight: bold;
     color: #d26400;
+    margin-left: 3px;
 }
 
 .monthStatSavings {
