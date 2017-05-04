@@ -4,6 +4,7 @@ nav {
     background-color: #bcdac1;
     display: flex;
     position: fixed;
+    top: 0px;
 }
 
 nav a {

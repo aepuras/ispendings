@@ -11,6 +11,7 @@ const LoginForm = ({
 }) => (
     <div className="loginForm">
         <form action="/" onSubmit={onSubmit}>
+            {errors.summary && <p className="error-message">{errors.summary}</p>}
             <div className={classnames('field', {error: !!errors.email})}>
                 <input className="login-input-field" type="text" id="email" name="email" value={user.email} onChange={onChange} placeholder="E-mail"/>
                 <span className="error-message">{errors.email}</span>

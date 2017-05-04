@@ -1,0 +1,33 @@
+.settingsFormCategory {
+    min-width: 200px;
+    margin: 4px;
+    padding: 10px;
+    background-color: #ece7c6;
+}
+
+.settingsFormCategory_name {
+    display: flex;
+    background-color: #F2F0E3;
+    color: #d26400;
+    padding: 4px;
+}
+
+.settingsFormCategory_name > h3 {
+    display: flex;
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.settingsFormCategory_name > a {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.settingsFormCagegory_items {
+    font-size: 12px;
+    padding: 10px;
+}

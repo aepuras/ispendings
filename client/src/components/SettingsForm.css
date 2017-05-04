@@ -1,0 +1,15 @@
+.settingsForm {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.settings > h1 {
+    margin: 10px;
+    font-size: 20px;
+    color: #d26400;
+}
+
+.settings {
+    margin-top: 60px;
+    padding: 10px;
+}
