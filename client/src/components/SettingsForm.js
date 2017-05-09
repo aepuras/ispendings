@@ -2,10 +2,10 @@ import React from 'react';
 import SettingsFormCategory from './SettingsFormCategory';
 import './SettingsForm.css'
 
-const SettingsForm = ({categories, deleteCategory}) => {
+const SettingsForm = ({categories, editCategory, deleteCategory}) => {
     const categoryComponents = categories.map((category, i) => {
         return (
-            <SettingsFormCategory key={i} category={category} deleteCategory={deleteCategory} />
+            <SettingsFormCategory key={i} category={category} deleteCategory={deleteCategory} editCategory={editCategory}/>
         );
     });
 

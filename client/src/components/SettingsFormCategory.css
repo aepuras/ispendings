@@ -21,13 +21,37 @@
     justify-content: flex-start;
 }
 
-.settingsFormCategory_name > a {
+.settingsFormCategory_tools {
     display: flex;
     flex: 1;
     justify-content: flex-end;
 }
 
+.settingsFormCategory_tools > a {
+    padding: 0px 4px 0px 4px;
+}
+
 .settingsFormCagegory_items {
     font-size: 12px;
     padding: 10px;
+}
+
+.settingsFormCategory_name > input, .settingsFormCagegory_items > div > input {
+    font-size:12px;
+    padding: 0px;
+}
+
+.settingsFormCagegory_items > div > div {
+    padding: 2px;
+}
+
+.settingsFormCategory_button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.settingsFormCategory_button > button {
+    color: #fff;
+    background-color: #d26400;
+    border: 0px;
 }

@@ -29,9 +29,12 @@ class SettingsPage extends Component {
 
     render() {
         let deleteCategory = (name) => {
-            console.log(name);
-        }
-        return (<SettingsForm categories={this.state.categories} deleteCategory={deleteCategory}/>);
+            console.log('delete: ' + name);
+        };
+        let editCategory = (name) => {
+            console.log('edit: ' + name);
+        };
+        return (<SettingsForm categories={this.state.categories} deleteCategory={deleteCategory} editCategory={editCategory} />);
     }
 }
 
